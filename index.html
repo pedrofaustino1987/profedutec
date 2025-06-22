@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUMEN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            display: flex; /* Habilita Flexbox para colocar los divs lado a lado */
+            gap: 20px; /* Espacio entre las columnas */
+            flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
+            margin-bottom: 30px; /* Espacio antes del tercer div */
+        }
+        .column {
+            flex: 1; /* Permite que las columnas crezcan y se encojan */
+            min-width: 45%; /* Ancho mínimo para cada columna, ajusta si es necesario */
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        th, td {
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        thead tr {
+            background-color: #009879; /* Color para la primera tabla */
+            color: #ffffff;
+        }
+        .column:nth-child(2) thead tr { /* Color específico para la segunda tabla */
+            background-color: #007bff;
+        }
+        tbody tr:nth-of-type(even) {
+            background-color: #f9f9f9;
+        }
+        tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+        .column:nth-child(2) tbody tr:last-of-type {
+            border-bottom: 2px solid #007bff;
+        }
+        tbody tr:hover {
+            background-color: #e6f7f5; /* Hover para la primera tabla */
+        }
+        .column:nth-child(2) tbody tr:hover {
+            background-color: #e6f0ff; /* Hover para la segunda tabla */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        h2 {
+            text-align: center;
+            color: #009879;
+            margin-bottom: 20px;
+        }
+        .column:nth-child(2) h2 {
+            color: #007bff;
+        }
+
+        /* Estilos para el tercer div de fragmentos */
+        .fragment-section {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px; /* Espacio encima de este div */
+        }
+        .fragment-section h2 {
+            color: #dc3545; /* Un color distintivo para esta sección */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .fragment-item {
+            border-bottom: 1px dashed #ccc;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+        .fragment-item:last-child {
+            border-bottom: none; /* No hay línea en el último fragmento */
+            margin-bottom: 0;
+        }
+
+        /* Media queries para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Apila las columnas en pantallas pequeñas */
+            }
+            .column {
+                min-width: 90%; /* Ocupa casi todo el ancho disponible */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Elementos Textuales y Signos de Puntuacion</h1>
+
+    <div class="container">
+        <div class="column">
+            <h2>Tabla de Relacionantes, Conectores y Marcadores Textuales</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Funcion Textual</th>
+                        <th>Relacionantes, Conectores o Marcadores Textuales</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Adicion/Ampliacion</td>
+                        <td>Y, ademas, encima, de igual forma, por a&ntilde;adidura, tambien, sumado a esto, asimismo, ademas de esto, al mismo tiempo, paralelamente, de la misma manera, mas aun, incluso, es mas, analogamente, igualmente, de igual modo...</td>
+                    </tr>
+                    <tr>
+                        <td>Correccion</td>
+                        <td>Bueno, o sea, mejor dicho, rectificando</td>
+                    </tr>
+                    <tr>
+                        <td>Cierre discursivo/Conclusion</td>
+                        <td>En fin, por fin, por ultimo, en resumen, en sintesis, para concluir, para terminar, sinteticamente, en forma sumaria, en definitiva, para concretar, en suma, al fin y al cabo, a fin de cuentas</td>
+                    </tr>
+                    <tr>
+                        <td>Digresion</td>
+                        <td>Por cierto, a proposito, por otra parte...</td>
+                    </tr>
+                    <tr>
+                        <td>Ejemplificacion e inclusion</td>
+                        <td>Por ejemplo, pongo por caso, como, tal como, verbigracia, tal es el caso de, para ejemplificar, en otras palabras, es como, es decir, en particular, dicho de otra manera, valga como ejemplo, concretamente, sin ir mas lejos, lo que quiere decir...</td>
+                    </tr>
+                    <tr>
+                        <td>Enfasis</td>
+                        <td>Pues si que, claro que, sobre todo, lo que es mas importante, es preciso se&ntilde;alar, repetimos, subrayamos, conviene poner enfasis, cabe destacar, cabe resaltar, en otras palabras, maxime...</td>
+                    </tr>
+                    <tr>
+                        <td>Explicacion o matizacion</td>
+                        <td>Es decir, esto es, a saber...</td>
+                    </tr>
+                    <tr>
+                        <td>Restriccion</td>
+                        <td>Si acaso, hasta cierto punto...</td>
+                    </tr>
+                    <tr>
+                        <td>Condicion</td>
+                        <td>Si... entonces... , si (tal cosa) tal (otra), siempre que, siempre y cuando, a condicion de que, en caso de que...</td>
+                    </tr>
+                    <tr>
+                        <td>Manera o modo</td>
+                        <td>Como, de modo similar, del mismo modo, de igual manera, de diferente modo, de esta manera, similarmente, inversamente...</td>
+                    </tr>
+                    <tr>
+                        <td>Causativos</td>
+                        <td>Porque, entonces, por esta razon, consecuentemente, en consecuencia, puesto que, debido a, por ello, por esta causa, por lo antedicho, de lo antedicho se desprende que, lo que antecede permite deducir, de ahi que, por lo tanto, en efecto, pues, por eso, por lo cual, por ende, en tal caso, en ese caso, de hecho, pues bien...</td>
+                    </tr>
+                    <tr>
+                        <td>Finalidad</td>
+                        <td>Para, en orden a, con el proposito de, con el fin de, con el objeto de, a fin de, a estos efectos, en procura de, para eso...</td>
+                    </tr>
+                    <tr>
+                        <td>Oposicion o contraste / Concesion</td>
+                        <td>No obstante, sin embargo, en oposicion a, con todo, aun, aunque, aun cuando, contrariamente a, pero, si bien, en contraste con, empero, a pesar de, pese a, en cambio, inversamente, al contrario, aun asi, de todos modos, despues de todo, en cualquier caso, en todo caso, sea como fuere, pero...</td>
+                    </tr>
+                    <tr>
+                        <td>Tiempo</td>
+                        <td>Antes, despues, mientras, anteriormente, mas tarde, actualmente, previamente, posteriormente, un momento despues, mucho tiempo antes, hasta que, cuando, finalmente, ya, en el momento en que, a partir de...</td>
+                    </tr>
+                    <tr>
+                        <td>Espacio</td>
+                        <td>Aqui, alla, aca, en ese lugar, donde, alli, al lado, debajo, arriba, a la izquierda, en el medio, en el fondo...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="column">
+            <h2>SIGNOS DE PUNTUACION Y OTROS</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Signos</th>
+                        <th>Funcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Punto</td>
+                        <td>Pausa mayor. Si se cambia de tema: punto aparte. Si continua el tema: punto seguido.</td>
+                    </tr>
+                    <tr>
+                        <td>La coma</td>
+                        <td>Pausa breve. Separa: elementos de una enumeracion, frases explicativas. Indica la omision del verbo, etc.</td>
+                    </tr>
+                    <tr>
+                        <td>El punto y coma</td>
+                        <td>Pausa intermedia. Separa oraciones largas unidas por conjunciones u oraciones yuxtapuestas.</td>
+                    </tr>
+                    <tr>
+                        <td>Los dos puntos</td>
+                        <td>Se usan para desarrollar el contenido de una oracion, para indicar una cita textual, para el encabezamiento de las cartas, etc.</td>
+                    </tr>
+                    <tr>
+                        <td>Los puntos suspensivos</td>
+                        <td>Se&ntilde;alan expresiones inconclusas u omitidas voluntariamente.</td>
+                    </tr>
+                    <tr>
+                        <td>Los parentesis</td>
+                        <td>Encierran datos complementarios o introducen aclaraciones sin conexion sintactica con el texto en el cual aparecen.</td>
+                    </tr>
+                    <tr>
+                        <td>Los corchetes</td>
+                        <td>Indican lo que falta en un texto o lo que se conjetura que deberia decir el texto.</td>
+                    </tr>
+                    <tr>
+                        <td>Las comillas</td>
+                        <td>Encierran citas textuales y palabras o expresiones que quieren destacarse dentro de un texto.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    ---
+
+    <div class="fragment-section">
+        <h2>Resumen</h2>
+        <h2>Pedagogia General - Ricardo Nassiff</h2>
+        <div class="fragment-item">
+            <p><strong>Pedagogia general. La educacion. Los multiples conceptos de la educacion. Educacion y pedagogia</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>Ciencia, problema o regla, la pedagogia trabaja siempre con la educacion.</p>
+        </div>
+        <div class="fragment-item">
+            <p>Es una realidad, un proceso, un hecho o una actividad concreta.</p>
+        </div>
+        <div class="fragment-item">
+            <p>La <strong>pedagogia</strong> es la disciplina, el estudio o el conjunto de normas, que se refieren a un hecho o a un proceso o actividad, la educacion.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>El pedagogo frente al concepto de educacion</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>Le sucede al pedagogo: se siente involucrado en el proceso que estudia que es nada menos que el educativo, en el cual arriesga, de una o de otra manera, su propio destino juntamente con el de su comunidad.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>La etimologia y sus dos sentidos</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>Etimologicamente, la palabra educacion procede del latin <i>educare</i>, que significa "criar", "nutrir" o "alimentar", y de <i>exducere</i>, que equivale a "sacar", "llevar" o "conducir desde dentro hacia afuera"</p>
+        </div>
+        <div class="fragment-item">
+            <p>Los dos sentidos que esas raices etimologicas sustentan han recibido, respectivamente, la calificacion de <i>acrecentamiento</i> (<i>educare</i>) y de <i>crecimiento</i> (<i>ex-ducere</i>), y constituyen los conceptos centrales de dos ideas distintas de la educacion que a traves del tiempo han luchado por imponerse.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>HETEROEDUCACION Y AUTOEDUCACION</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>...El punto de referencia es el sujeto que se educa...</p>
+        </div>
+        <div class="fragment-item">
+            <p>Si el proceso educativo se organiza, se ejerce y se impone desde fuera y desde arriba, debe hablarse de <i>heteroeducacion</i></p>
+        </div>
+        <div class="fragment-item">
+            <p>El proceso educativon recorre la direccion inversa, esto es, nace del individuo mismo, para desde &eacute;l apropiarse de lo que le es exterior y conformarlo a su individualidad debe hablarse de <i>autoeducacion</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p>En la <i>heteroeducacion</i> el hombre es formado</p>
+        </div>
+        <div class="fragment-item">
+            <p>En la <i>autoeducacion</i> el hombre se forma, de acuerdo a una voluntad autonoma de desarrollo interior.</p>
+        </div>
+        <div class="fragment-item">
+            <p>"La educacion no crea el hombre, lo ayuda a crearse a si mismo. Maurice Debesse".</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA EDUCACION COMO PROCESO DINAMICO</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>La realidad ense&ntilde;a que la educacion es por esencia un <i>acto</i>, un <i>proceso dinamico</i> que nace con el hombre y muere con &eacute;l.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA EDUCACION COMO REALIDAD</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>La educacion tambien es una realidad en la vida de las comunidades. Para comprenderlo es preciso apelar al sentido de lo real.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA INTENCION EDUCATIVA</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>La <i>educacion cosmica</i> es la influencia de los factores, fenomenos y elementos del mundo. Esta educacion es </i>inconsciente</i> (no se propone deliberadamente educar).</p>
+        </div>
+        <div class="fragment-item">
+            <p>La educacion <i>asistematica</i> (sin sistema ni orden).</p>
+        </div>
+        <div class="fragment-item">
+            <p><i>Ametodica (no tiene procedimientos predeterminados)</i></p>
+        </div>
+        <div class="fragment-item">
+            <p><i>Natural, espontanea</i> y <i>refleja</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p>La </i>educacion sistematica</i> se caracteriza por el definido <i>proposito</i> de <i>educar</i> o de ser educado y es, por lo tanto, <i>consciente</i> o <i>intencional, metodica</i> y <i>artificial</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA EDUCACION COMO ACTIVIDAD INTENCIONAL</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>"Influencia consciente sobre el hombre ductil e inculto con el proposito de formarlo" (Jonas Cohn); "Actividad planeada mediante la cual los adultos tratan de formar la vida animica de los seres en desarrollo". (Wilhelm Dilthey)</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>MOMENTOS DEL PROCESO EDUCATIVO GENERAL</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>Llamamos <i>proceso educativo general</i> al conjunto de influencias que se ejercen sobre el ser para configurarlo, no solo desde el punto de vista espiritual y social, sino tambien biologico.</p>
+        </div>
+        <div class="fragment-item">
+            <p>Se inicia con la <i>crianza</i>, sigue con el <i>adiestramiento</i>, continua con la <i>instruccion</i> y la <i>educacion</i>, para culminar con la <i>autoeducacion</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p>La <i>crianza</i> es una conduccion que se mantiene en el plano biologico y cuyo fin primordial es asegurar la subsistencia organica del ser.</p>
+        </div>
+        <div class="fragment-item">
+            <p>El <i>adiestramiento</i> es la constitucion de habitos, de mecanismos que permitan al individuo adaptarse y reaccionar adecuadamente frente a situaciones exteriores.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA INSTRUCCION</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>"La instruccion es un concepto que alude al momento en que la relacion educando-educador se supedita a un bien objetivizado". Samuel Taborda</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA EDUCACION EN EL PROCESO EDUCATIVO</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>Rene Hubert sostiene que "es una tutela" que tiene por objeto conducir al ser hasta el punto en que no tenga ya necesidad de tutela".</p>
+        </div>
+        <div class="fragment-item">
+            <p>La <i>educacion</i> apunta a la <i>formacion</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p><i>Hombre</i> y <i>mundo</i> son dos categorias inseparables en la realidad.</p>
+        </div>
+        <div class="fragment-item">
+            <p>En primera instancia, esta por un lado el <i>medio natural</i> o <i>fisico</i> y por otro el <i>medio cultural</i> y <i>social</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p>El mundo del hombre se nos ha diversificado en tres sectores que contituyen la realidad humana, <i>naturaleza, sociedad</i> y <i>cultura</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p>Los terminos <i>educacion</i> y <i>naturaleza</i> ofrecen relaciones que hacen posible la formacion de otros conceptos de la educacion. Esas relaciones pueden ordenarse de acuerdo a tres puntos de vista: a) de la naturaleza organica individual, b) de la educacion cosmica, c) de la educacion sistematica.</p>
+        </div>
+        <div class="fragment-item">
+            <p>Como muy bien ha dicho Dewey "la educacion es una necesidad vital que permite, al satisfacerse, la supervivencia del ser biologico."</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA SOCIEDAD DEFINIDA CON CRITERIO PEDAGOGICO</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>Ernest Krieck - Define a la comunidad mediante tres notas. En primer termino, "convivencia y proximidad espacial"; en segundo lugar, "sujecion a una norma superior, a un ideal"; y finalmente, esa sujecion a la norma no es valida solo para los hombres que viven en un mismo tiempo, sino que es el puente que une los diversos momentos del desarrollo social a traves de la historia.
+Las tres caracteristicas reunidas pueden darnos el siguiente concepto de comunidad: <i>convivencia</i>, <i>proximidad</i> y </i>sujecion a una norma que une las generaciones pasadas con las presentes</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>EDUCACION Y SOCIEDAD</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>La educacion es quien se encarga de transmitirlas y comunicarlas, sea en su forma cosmica o sistematica. 
+Para esto aspecto resultan validas las definiciones de Durkheim y de Dewey. El primero, sociologo frances, opina que la educacion
+es el proceso de "socializacion progresiva y metodica de las generaciones jovenes por las generaciones adultas". El segundo, filosofo
+y pedagogo norteamericano, con una vision mucho mas amplia, la concibe como "la suma de procesos, por los cuales una sociedad 
+grande o peque&ntilde;a transmite sus poderes adquiridos con el fin de asegurar su continuo desarrollo y su subsistencia".</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>CULTURAS OBJETIVA Y SUBJETIVA. BIENES Y VALORES CULTURALES</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>Si tomamos el contenido de Rickert da a la palabra <i>cultura</i>, resulta perfectamente licito apretarlo como sigue:
+<i>cultura es lo producido o creado  por el hombre con vista a los valores</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p>La cultura como objeto (<i>cultura objetiva</i>), esta por encima del individuo y lo coacciona. Se trata, por ejemplo, 
+del lenguaje que debemos aprender para entendernos con el projimo, o de las costumbres y formas basicas de la comunidad
+que debemos adoptar para convivir con los demas, presionados por las tradiciones y por el consenso general.</p>
+        </div>
+        <div class="fragment-item">
+            <p><i>La cultura subjetiva es el estado de captacion de lo objetivo</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>SISTEMA DE LOS CONCEPTOS CULTURALISTAS DE LA EDUCACION</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>Los conceptos de la educacion desde el punto de vista cultural son, en esencia, cinco:<br>
+a) <i>bien de cultura</i>;
+<br> 
+b) <i>sintesis de cultura</i>;
+<br>
+c) <i>transmision de cultura</i>;
+<br>
+d) <i>individualizacion de la cultura</i>;
+<br>
+e) <i>transformacion de la cultura</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA EDUCACION, BIEN DE CULTURA</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>Eduard Spranger la define como un "patrimonio tradicional y actual de la sociedad".</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA EDUCACION, SINTESIS DE LA CULTURA</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>La educacion es la <i>sintesis y la condensacion consciente de la totalidad de la cultura</i></p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA EDUCACION, TRANSMISION DE CULTURA</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>La educacion es el <i>proceso de transmision de la cultura dada o vigente con el objeto de reproducirla y mantenerla</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA EDUCACION, INDIVIDUALIZACION DE LA CULTURA</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>Como lo ha dicho Hermann Nohl: "La educacion es el aspecto subjetivo de la cultura, la forma interior, 
+la actitud espiritual del alma que puede acoger todo lo que viene de fuera con sus propias fuerzas, en una vida 
+unitaria, y transformar todas las acciones desde esta vida unitaria".</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>LA EDUCACION, TRANSFORMACION DE LA CULTURA</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>...Sprangler, "Voluntad despertada por el amor generoso en el alma de otro, para desarrollar desde dentro la
+total receptividad de valores y su total capacidad creadora de valores". La educacion es el <i>proceso de vivificacion, 
+de renovacion y de creacion de cultura</i>.</p>
+        </div>
+        <div class="fragment-item">
+            <p><strong>CONCEPTO INTEGRAL DE LA EDUCACION EN SUS RELACIONES CON LA CULTURA</strong></p>
+        </div>
+        <div class="fragment-item">
+            <p>La <i>educacion es la integracion cultural y personal</i>. Por cierto que se trata de la integracion del hombre,
+unico ser capaz de cultura y de educacion.</p>
+        </div>
+        <div class="fragment-item">
+            <p>Expliquemos. El concepto implica dos caras de un mismo proceso. Por un lado es integracion (incorporacion)
+del hombre a la cultura; por el otro integracion de la cultura misma.</p>
+        </div>
+        <div class="fragment-item">
+            <p>... Sprangler; a la "esencial formacion personal de los sujetos en desarrollo".</p>
+        </div>
+    </div>
+
+</body>
+</html>
